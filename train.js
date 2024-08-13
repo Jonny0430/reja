@@ -1,0 +1,1 @@
+console.log('trainn task ishga tushdi!');
