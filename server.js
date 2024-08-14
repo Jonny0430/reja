@@ -27,8 +27,8 @@ app.set("view engine", "ejs");
 
 //4 routing code
 app.post("/create-item", (req, res) => {
-   console.log(req.body);
-   res.json({test: "success" });
+   //console.log(req.body);
+   //res.json({test: "success" });
 });
 
 
