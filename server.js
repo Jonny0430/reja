@@ -31,12 +31,10 @@ app.post("/create-item", (req, res) => {
    res.json({test: "success"});
 });
 
-//age.get("/",function(req, res) {
-   // res.end("Hello world");
-//});
+
 
 app.get("/author", (req, res) => {
-  res.render("author", {user: user});
+  res.render("author"), {user: user};
 });
 
 app.get("/", function(req, res) {
