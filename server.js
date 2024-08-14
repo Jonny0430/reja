@@ -27,11 +27,15 @@ app.set("view engine", "ejs");
 
 //4 routing code
 app.post("/create-item", (req, res) => {
-//   console.log(req.body);
-//   res.json({test: "success"});
+   console.log(req.body);
+   res.json({test: "success"});
 });
 
-app.get("/auhtor", (req, res) => {
+//age.get("/",function(req, res) {
+   // res.end("Hello world");
+//});
+
+app.get("/author", (req, res) => {
   res.render("author", {user: user});
 });
 
