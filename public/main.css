@@ -4,18 +4,19 @@
  
  .frame {
      width: 100%;
-     height: 100%;
+     height: 1500px;
      position: relative;
      display: flex;
      flex-direction: row;
      justify-content: center;
      background: #e5e5e5;
      
+     
   }
   .frame .main_frame {
      position: relative;
-     width: 1440px;
-     height: 1313px;
+     width: 1440px; /*1140px*/
+     height: 1313px;/*1313px*/
      display: flex;
      flex-direction: row;
      margin-top: 2px;
@@ -24,7 +25,7 @@
   .main_frame .left_frame {
      position: relative;
      width: 305px;
-     height: 1315px;
+     height: 1415px;
      background-color: white;
      display: flex;
      flex-direction: column;
@@ -107,26 +108,76 @@
     background: rgb(255, 255, 255);
  }
  
- .services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
- }
- 
- .service {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
-    width: 300px;
-    height: 225px;
-    padding-top: 20px;
-  }
+ .main_service {
+   display: flex;
+   gap: 20px;
+   flex-direction: column;
+   align-items: center;
+}
+
+.main_service .service_headline {
+   color: rgb(43, 43, 43);
+   font-size: 32px;
+   font-weight: 600;
+   text-transform: capitalize;
+   text-align: center;
+   margin-top: 63px;
+}
+
+.main_service .service_des {
+   color: rgb(118, 118, 118);
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 24px;
+   letter-spacing: 0%;
+   text-align: center;
+   text-transform: capitalize;
+   width: 45%;
+   margin-bottom: 50px;
+}
+
+.service_grid-wrapper {
+   display: grid;
+   grid-template-columns: 310px 310px 310px;
+   grid-template-rows: 225px 225px;
+   gap: 20px;
+}
+
+.service_grid {
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 20px
+}
+
+.service_grid .service_grid-headline {
+   color: rgb(43, 43, 43);
+   font-size: 18px;
+   font-weight: 500;
+   line-height: 123.6%;
+}
+
+.service_grid .service_grid-des {
+   color: rgb(118, 118, 118);
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 24px;
+   text-align: center;
+   text-transform: capitalize;
+}
+
+.sg_order {
+   color: rgb(255, 180, 0);
+   font-size: 12px;
+   font-weight: 700;
+   line-height: 14px;
+}
  .main_frame .right_frame {
      position: relative;
      width: 108px;
-     height: 1315px;
+     height: 1400px;
      background-color: white;
      align-items: center;
      display: flex;
