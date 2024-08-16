@@ -182,8 +182,17 @@
      align-items: center;
      display: flex;
      flex-direction: column;
+     padding-top:  20px;
   }
  
+  .right-icons .culumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 20px;
+
+  }
   .right-icons {
     display: flex;
     flex-direction: column;
@@ -191,6 +200,7 @@
     justify-content: space-around;
     height: 490px;
     cursor: pointer;
+    padding-top: 60px;
   }
   .right-icon {
     width: 40px;
