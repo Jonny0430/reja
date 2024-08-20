@@ -1,38 +1,38 @@
-const { rejects } = require("assert");
-const { constants } = require("buffer");
-const { log } = require("util");
+// const { rejects } = require("assert");
+// const { constants } = require("buffer");
+// const { log } = require("util");
 
-console.log("Jack Ma maslahatlari");
-const list = [
-    "yahshi talaba boling", //0-20
-    "togri boshliq tanlang va koproq xarakat qiling", // 30-40
-    "uzingizga ishlashingizni boshlang", //40-50
-    "siz kuchli bolgan narsalarni qiling", //40-50
-    "yoshlarga investitsiya qiling", //50-60
-    "endi dam oling, foydasi yoq endi", //60
-];
-function maslahatBering(a, callback) {
-    if (typeof a !== "number") callback("Insert a number", null);
-    else if (a <= 20) callback(null, list[0]);
-    else if (a > 20 && a <= 30) callback(null, list[1]);
-    else if (a > 30 && a <= 40) callback(null, list[2]);
-    else if (a > 40 && a <= 50) callback(null, list[3]);
-    else if (a > 50 && a <= 60) callback(null, list[4]);
-    else {
-        setInterval(function () { //setTimeout
-        callback(null, list[5]);
-      }, 1000);
-    }
-}
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//     "yahshi talaba boling", //0-20
+//     "togri boshliq tanlang va koproq xarakat qiling", // 30-40
+//     "uzingizga ishlashingizni boshlang", //40-50
+//     "siz kuchli bolgan narsalarni qiling", //40-50
+//     "yoshlarga investitsiya qiling", //50-60
+//     "endi dam oling, foydasi yoq endi", //60
+// ];
+// function maslahatBering(a, callback) {
+//     if (typeof a !== "number") callback("Insert a number", null);
+//     else if (a <= 20) callback(null, list[0]);
+//     else if (a > 20 && a <= 30) callback(null, list[1]);
+//     else if (a > 30 && a <= 40) callback(null, list[2]);
+//     else if (a > 40 && a <= 50) callback(null, list[3]);
+//     else if (a > 50 && a <= 60) callback(null, list[4]);
+//     else {
+//         setInterval(function () { //setTimeout
+//         callback(null, list[5]);
+//       }, 1000);
+//     }
+// }
 
-console.log("passed here 0");
-maslahatBering(70, (err, data) => {
-    if (err) console.log("ERROR:", err);
-    else {
-        console.log(data);
-    }
-});
-console.log("passed here 1");
+// console.log("passed here 0");
+// maslahatBering(70, (err, data) => {
+//     if (err) console.log("ERROR:", err);
+//     else {
+//         console.log(data);
+//     }
+// });
+// console.log("passed here 1");
 
 
 //ASYNC funcion
@@ -94,3 +94,22 @@ console.log("passed here 1");
 // });
 // console.log('passed here 1');
 
+// A-TASK: 
+//Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
+//MASALAN countLetter("e", "engineer") 3ni return qiladi.
+
+
+//B-TASK
+function countLetter(letter, word) {
+    let count = 0; //Hisoblagichni ishga tushirish
+    for (let char of word) {
+        if (char === letter) {
+            count++; // Agar harf so'zdagi belgiga mos kelsa, hisoblagichni oshirish
+        }
+    }
+    return count; // Umumiy sonni qaytarish
+}
+
+// Foydalanish misoli
+const result = countLetter("e", "engineer");
+console.log(result); // Bu 3 chiqishi kerak
