@@ -100,16 +100,16 @@
 
 
 //B-TASK
-function countLetter(letter, word) {
-    let count = 0; //Hisoblagichni ishga tushirish
-    for (let char of word) {
-        if (char === letter) {
-            count++; // Agar harf so'zdagi belgiga mos kelsa, hisoblagichni oshirish
-        }
-    }
-    return count; // Umumiy sonni qaytarish
-}
+// function countLetter(letter, word) {
+//     let count = 0; //Hisoblagichni ishga tushirish
+//     for (let char of word) {
+//         if (char === letter) {
+//             count++; // Agar harf so'zdagi belgiga mos kelsa, hisoblagichni oshirish
+//         }
+//     }
+//     return count; // Umumiy sonni qaytarish
+// }
 
-// Foydalanish misoli
-const result = countLetter("e", "engineer");
-console.log(result); // Bu 3 chiqishi kerak
+// // Foydalanish misoli
+// const result = countLetter("e", "engineer");
+// consongodb+/olesrv:.log(result); // Bu 3 chiqishi kerak
