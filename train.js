@@ -113,3 +113,21 @@
 // // Foydalanish misoli
 // const result = countLetter("e", "engineer");
 // consongodb+/olesrv:.log(result); // Bu 3 chiqishi kerak
+
+
+//B-TEKS:
+
+function countDigits(inputString) {
+        let count = 0;
+        for (let char of inputString) {
+            if (/\d/.test(char)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    // Example usage
+    const result = countDigits("ad2a54y79wet0sfgb9");
+    console.log(result);  // Output: 7
+    
