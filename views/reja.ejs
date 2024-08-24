@@ -14,17 +14,19 @@
        <div class="container">
          <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
 
-         <div class="jumbotron p-3 shadow-sm">
+         <div class="jumbotron p-3 shadow-sm"
+         style="background-color: rgb(243, 239, 239); border-radius: 10px"
+         >
             <form id="create-form" action="/create-item" method="POST">
                 <div class="d-flex align-items-center">
                     <input 
-                    id="create-field"
+                     type="text"
                     name="reja"
                     autofocus
                     autocomplete="off"
                     class="form-control mr-3"
-                    type="text"
-                    style="flex: 1"
+                    id="create-field"
+                    style="flex: 1; margin-right: 14px";
                     />
                     <button class="btn btn-primary" style="border-radius: 20px">
                         Yangi Reja Qushish
@@ -32,25 +34,29 @@
                 </div>
             </form>
          </div>
-         <ul id="item-list" class="list-group pb-5">
-            <% items.map(function(item) { %>
-                <li
-            class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+          <ul id="item-list" class="list-group pb-5">   <!-- -->
+             <% items.map(function(item){ %>   <!-- -->
+                <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
                 >
                 <span class="item-text"><%=item.reja%></span>
                 <div>
-                    <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">
+                    <button 
+                    data-id="<%=item._id%>"
+                    class="edit-me btn btn-secondary btn-sm mr-2">
                         O'zgartrish
                     </button>
                     <button
                     data-id="<%=item._id%>" 
-                    class="delet-me btn-danger btn-sm">O'chrish</button>
+                    class="delete-me btn btn-danger btn-sm"
+                    >O'chrish</button>
                 </div>
             </li>
                 <% }) %>
-        <button class="btn btn-danger" style="border-radius: 20px" onclick="clickAllDelete">
+        <!-- <button class="btn btn-danger" style="border-radius: 20px" onclick="clickAllDelete"> -->
          </ul>
-         <button class="btn btn-danger" style="border-radius: 20px">
+         <button id="clean-all" 
+         class="btn btn-danger" 
+         style="border-radius: 20px; margin: 40px 0px 10px">
             Hamma Rejalarni O'chirish
          </button>
        </div> 
