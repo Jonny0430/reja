@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 
 //4 routing code
 app.post("/create-item", (req, res) => {
-  console.log("user entered /create-item");
+     console.log("user entered /create-item");
    //console.log(req.body);
   //  res.end("success");
   // res.json({test: "success" });
@@ -50,8 +50,9 @@ app.post("/create-item", (req, res) => {
 
 app.post("/delete-item", (req, res) => {
    const id = req.body.id;
-   db.collection("plans").deleteOne({ _id: new mongodb.ObjectId(id) },  
-  function (err, data) {
+   db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },  
+   (err, data) => {
     res.json({state: "success"});
   } 
   );
@@ -61,6 +62,26 @@ app.post("/delete-item", (req, res) => {
 
 
 
+  app.post("/edit-item", (req,res) => {
+    const data = req.body;
+    console.log(data);
+    db.collection("plans").findOneAndUpdate({_id: new mongodb.ObjectId(data.id) },
+  { $set: { reja: data.new_input } },
+(err, data) => {
+  res.json({state: "success"});
+}
+    );
+    // res.end("done");
+  });
+
+
+  app.post("/delete-all", (req, res) => {
+    if (req.body.delete_all) {
+      db.collection("plans"). deleteMany(function () {
+        res.json({ state: "hamma rejalar o'chirildi" });
+      });
+    }
+  });
 
 // app.get("/author", (req, res) => {
 //   res.render("author", {user: user});
@@ -82,3 +103,5 @@ app.get("/", function(req, res) {
 });
 
 module.exports = app;
+
+//14 00
