@@ -117,17 +117,37 @@
 
 //B-TEKS:
 
-function countDigits(inputString) {
-        let count = 0;
-        for (let char of inputString) {
-            if (/\d/.test(char)) {
-                count++;
-            }
-        }
-        return count;
-    }
+// function countDigits(inputString) {
+//         let count = 0;
+//         for (let char of inputString) {
+//             if (/\d/.test(char)) {
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
     
-    // Example usage
-    const result = countDigits("ad2a54y79wet0sfgb9");
-    console.log(result);  // Output: 7
+//     // Example usage
+//     const result = countDigits("ad2a54y79wet0sfgb9");
+//     console.log(result);  // Output: 7
+
+
+
+
+// C-TASK: 
+
+// Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+function checkContent(str1, str2) {
+    // Ikkala qatordagi harflarni tartiblangan
+    const sortedStr1 = str1.split('').sort().join('');
+    const sortedStr2 = str2.split('').sort().join('');
     
+    //Satrlarning tartiblangan versiyalarini solishtirish
+    return sortedStr1 === sortedStr2;
+}
+
+// Tekshrish
+console.log(checkContent("mitgroup", "gmtiprou")); //  true
+console.log(checkContent("hello", "world"));       //  false
