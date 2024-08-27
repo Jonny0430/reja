@@ -139,15 +139,56 @@
 // Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
 // MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 
-function checkContent(str1, str2) {
-    // Ikkala qatordagi harflarni tartiblangan
-    const sortedStr1 = str1.split('').sort().join('');
-    const sortedStr2 = str2.split('').sort().join('');
+// function checkContent(str1, str2) {
+//     // Ikkala qatordagi harflarni tartiblangan
+//     const sortedStr1 = str1.split('').sort().join('');
+//     const sortedStr2 = str2.split('').sort().join('');
     
-    //Satrlarning tartiblangan versiyalarini solishtirish
-    return sortedStr1 === sortedStr2;
-}
+//     //Satrlarning tartiblangan versiyalarini solishtirish
+//     return sortedStr1 === sortedStr2;
+// }
 
-// Tekshrish
-console.log(checkContent("mitgroup", "gmtiprou")); //  true
-console.log(checkContent("hello", "world"));       //  false
+// // Tekshrish
+// console.log(checkContent("mitgroup", "gmtiprou")); //  true
+// console.log(checkContent("hello", "world"));       //  false
+
+class Shop {
+    constructor(breads, lagmons, colas) {
+    // Mahsulot miqdorini ishga tushirish
+      this.products = { bread: breads, lagmon: lagmons, cola: colas };
+    }
+  
+    // Joriy vaqtni 'HH:mm' formatida olish
+    _getCurrentTime() {
+      return new Date().toTimeString().slice(0, 5);
+    }
+  
+ // Qolgan zaxiralarni ko'rsatish
+    remaining() {
+      const { bread, lagmon, cola } = this.products;
+      console.log(`Now at ${this._getCurrentTime()} there are ${bread} breads, ${lagmon} lagmons, and ${cola} colas!`);
+    }
+  
+   // Mahsulotni sotish
+    sell(product, quantity) {
+      if (this.products[product] >= quantity) {
+        this.products[product] -= quantity;
+        console.log(`Sold ${quantity} ${product}(s) at ${this._getCurrentTime()}`);
+      } else {
+        console.log(`Cannot sell ${quantity} ${product}(s) - insufficient stock.`);
+      }
+    }
+  
+    // Mahsulotning yangi zaxirasini olish
+    accept(product, quantity) {
+      this.products[product] += quantity;
+      console.log(`Received ${quantity} ${product}(s) at ${this._getCurrentTime()}`);
+    }
+  }
+  
+// Foydalanish misoli
+  const shop = new Shop(4, 5, 2);  // Do'konni 4 ta non, 5 ta lag'mon va 2 ta kola bilan boshlash
+  shop.remaining();                // Jurnallar: Hozir [vaqt] 4 ta non, 5 ta lag'mon va 2 ta kola!
+  shop.sell('bread', 3);          // Jurnallar: 3 ta non sotilgan
+  shop.accept('cola', 4);          // Jurnallar: 4 ta kola olindi
+  shop.remaining();               // Jurnallar: Hozir 1 ta non, 5 ta lag'mon va 6 ta kola!
