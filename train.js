@@ -152,43 +152,63 @@
 // console.log(checkContent("mitgroup", "gmtiprou")); //  true
 // console.log(checkContent("hello", "world"));       //  false
 
-class Shop {
-    constructor(breads, lagmons, colas) {
-    // Mahsulot miqdorini ishga tushirish
-      this.products = { bread: breads, lagmon: lagmons, cola: colas };
-    }
+
+// D-TASK: 
+
+// Shunday class tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+// MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+
+
+// class Shop {
+//     constructor(breads, lagmons, colas) {
+//     // Mahsulot miqdorini ishga tushirish
+//       this.products = { bread: breads, lagmon: lagmons, cola: colas };
+//     }
   
-    // Joriy vaqtni 'HH:mm' formatida olish
-    _getCurrentTime() {
-      return new Date().toTimeString().slice(0, 5);
-    }
+//     // Joriy vaqtni 'HH:mm' formatida olish
+//     _getCurrentTime() {
+//       return new Date().toTimeString().slice(0, 5);
+//     }
   
- // Qolgan zaxiralarni ko'rsatish
-    remaining() {
-      const { bread, lagmon, cola } = this.products;
-      console.log(`Now at ${this._getCurrentTime()} there are ${bread} breads, ${lagmon} lagmons, and ${cola} colas!`);
-    }
+//  // Qolgan zaxiralarni ko'rsatish
+//     remaining() {
+//       const { bread, lagmon, cola } = this.products;
+//       console.log(`Now at ${this._getCurrentTime()} there are ${bread} breads, ${lagmon} lagmons, and ${cola} colas!`);
+//     }
   
-   // Mahsulotni sotish
-    sell(product, quantity) {
-      if (this.products[product] >= quantity) {
-        this.products[product] -= quantity;
-        console.log(`Sold ${quantity} ${product}(s) at ${this._getCurrentTime()}`);
-      } else {
-        console.log(`Cannot sell ${quantity} ${product}(s) - insufficient stock.`);
-      }
-    }
+//    // Mahsulotni sotish
+//     sell(product, quantity) {
+//       if (this.products[product] >= quantity) {
+//         this.products[product] -= quantity;
+//         console.log(`Sold ${quantity} ${product}(s) at ${this._getCurrentTime()}`);
+//       } else {
+//         console.log(`Cannot sell ${quantity} ${product}(s) - insufficient stock.`);
+//       }
+//     }
   
-    // Mahsulotning yangi zaxirasini olish
-    accept(product, quantity) {
-      this.products[product] += quantity;
-      console.log(`Received ${quantity} ${product}(s) at ${this._getCurrentTime()}`);
-    }
-  }
+//     // Mahsulotning yangi zaxirasini olish
+//     accept(product, quantity) {
+//       this.products[product] += quantity;
+//       console.log(`Received ${quantity} ${product}(s) at ${this._getCurrentTime()}`);
+//     }
+//   }
   
-// Foydalanish misoli
-  const shop = new Shop(4, 5, 2);  // Do'konni 4 ta non, 5 ta lag'mon va 2 ta kola bilan boshlash
-  shop.remaining();                // Jurnallar: Hozir [vaqt] 4 ta non, 5 ta lag'mon va 2 ta kola!
-  shop.sell('bread', 3);          // Jurnallar: 3 ta non sotilgan
-  shop.accept('cola', 4);          // Jurnallar: 4 ta kola olindi
-  shop.remaining();               // Jurnallar: Hozir 1 ta non, 5 ta lag'mon va 6 ta kola!
+// // Foydalanish misoli
+//   const shop = new Shop(4, 5, 2);  // Do'konni 4 ta non, 5 ta lag'mon va 2 ta kola bilan boshlash
+//   shop.remaining();                // Jurnallar: Hozir [vaqt] 4 ta non, 5 ta lag'mon va 2 ta kola!
+//   shop.sell('bread', 3);          // Jurnallar: 3 ta non sotilgan
+//   shop.accept('cola', 4);          // Jurnallar: 4 ta kola olindi
+//   shop.remaining();               // Jurnallar: Hozir 1 ta non, 5 ta lag'mon va 6 ta kola!
+
+// E-TASK: 
+
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+
+
+function getReverse(a) {
+        return a.split("").reverse("").join("");
+};
+
+const a = "hello"
+console.log(getReverse(a));
