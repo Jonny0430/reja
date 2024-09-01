@@ -206,9 +206,26 @@
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
 
-function getReverse(a) {
-        return a.split("").reverse("").join("");
-};
+// function getReverse(a) {
+//         return a.split("").reverse("").join("");
+// };
 
-const a = "hello"
-console.log(getReverse(a));
+// const a = "hello"
+// console.log(getReverse(a));
+
+// F-TASK: 
+
+// Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+// MASALAN: getReverse("hello") return true return qiladi
+function findDoublers(str) {
+        const seenCharacters = new Set();
+        for (let char of str) {
+            if (seenCharacters.has(char)) {
+                return true;
+            }
+            seenCharacters.add(char);
+        }
+        return false;
+    }
+    
+    console.log(findDoublers("hello")); 
